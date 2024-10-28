@@ -6,7 +6,7 @@ import pandas as pd
 
 
 def start_rec():
-    st.title("Movie Recommendation System")
+    st.header("Generate your recommendations")
 
     model_name = "distilbert-base-uncased" 
     tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -86,6 +86,24 @@ def start_rec():
         df.columns = ('Movie', 'Rate')
         styled_df = df.style.background_gradient(subset=['Rate'], cmap='YlGn')
         st.dataframe(styled_df)
+
+    st.markdown(
+    """
+    <style>
+    .footer-text {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        font-size: 16px;
+        color: #888;
+    }
+    </style>
+    <div class="footer-text">
+        Developed by Diego Oliveira - AI Engineer
+    </div>
+    """,
+    unsafe_allow_html=True
+    )
 
 if __name__ == "__main__":
     start_rec()

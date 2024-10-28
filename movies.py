@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import main as m
 
 
 def start_mov():
@@ -45,5 +46,24 @@ def start_mov():
     {"movie_id": 140, "title": "Pretty Woman", "description": "A wealthy businessman hires a prostitute to accompany him to social events, leading to an unexpected romance."}
     ]
 
+    st.header("List of the movies")
     df_movie = pd.DataFrame(movie_database)
     st.dataframe(df_movie, height=800, width=1500)
+
+    st.markdown(
+    """
+    <style>
+    .footer-text {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        font-size: 16px;
+        color: #888;
+    }
+    </style>
+    <div class="footer-text">
+        Developed by Diego Oliveira - AI Engineer
+    </div>
+    """,
+    unsafe_allow_html=True
+    )
