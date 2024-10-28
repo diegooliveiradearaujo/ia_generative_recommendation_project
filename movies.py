@@ -55,7 +55,7 @@ def start_mov():
     <style>
     .footer-text {
         position: fixed;
-        bottom: 10px;
+        bottom: 35px;
         right: 10px;
         font-size: 16px;
         color: #888;
